@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/HeroSection"
 import { PartnersSection } from "@/components/PartnersSection"
 import { FeaturesSection } from "@/components/FeaturesSection"
 import { LeadModal } from "@/components/LeadModal"
+import Icon from "@/components/ui/icon"
 
 export default function Index() {
   const [modalOpen, setModalOpen] = useState(false)
@@ -19,6 +20,16 @@ export default function Index() {
         <span className="font-medium text-white">всё быстро и без лишних сложностей.</span>
       </footer>
       <LeadModal open={modalOpen} onClose={() => setModalOpen(false)} />
+
+      <a
+        href="https://t.me/ustinov_zagran_karty"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-[#229ED9] px-4 py-3 text-sm font-medium text-white shadow-lg hover:bg-[#1a8bbf] transition-all hover:scale-105 active:scale-95"
+      >
+        <Icon name="Send" size={18} />
+        <span className="hidden sm:inline">Написать в Telegram</span>
+      </a>
     </main>
   )
 }

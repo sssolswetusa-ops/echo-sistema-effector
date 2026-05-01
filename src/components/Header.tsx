@@ -1,7 +1,7 @@
 import { ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-export function Header() {
+export function Header({ onGetCard }: { onGetCard?: () => void }) {
   return (
     <header className="flex items-center justify-between px-8 py-4">
       <div className="flex items-center gap-2">
@@ -31,6 +31,7 @@ export function Header() {
 
       <Button
         variant="outline"
+        onClick={onGetCard}
         className="rounded-full border-violet-500 text-violet-400 hover:bg-violet-500/10 hover:text-violet-300 bg-transparent"
       >
         Получить карту

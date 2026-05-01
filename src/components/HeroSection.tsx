@@ -1,7 +1,7 @@
 import { ArrowUpRight, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-export function HeroSection() {
+export function HeroSection({ onGetCard }: { onGetCard?: () => void }) {
   return (
     <section className="flex flex-col items-center justify-center px-4 pt-12 pb-8 text-center">
       <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-[#1a1a1a] py-2 text-sm px-2">
@@ -17,7 +17,7 @@ export function HeroSection() {
       <p className="mb-8 max-w-xl text-gray-400">Оплачивайте покупки, снимайте наличные и платите онлайн в любой точке мира — без блокировок и отказов.</p>
 
       <div className="flex flex-col sm:flex-row items-center gap-4">
-        <Button className="rounded-full bg-violet-600 px-6 hover:bg-violet-700 text-white">
+        <Button onClick={onGetCard} className="rounded-full bg-violet-600 px-6 hover:bg-violet-700 text-white">
           Получить карту <ArrowUpRight className="ml-2 h-4 w-4" />
         </Button>
         <Button variant="outline" className="rounded-full border-gray-700 bg-transparent text-white hover:bg-gray-800">

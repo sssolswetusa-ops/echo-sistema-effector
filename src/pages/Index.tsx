@@ -3,6 +3,7 @@ import { Header } from "@/components/Header"
 import { HeroSection } from "@/components/HeroSection"
 import { PartnersSection } from "@/components/PartnersSection"
 import { FeaturesSection } from "@/components/FeaturesSection"
+import { PricingSection } from "@/components/PricingSection"
 import { LeadModal } from "@/components/LeadModal"
 import Icon from "@/components/ui/icon"
 
@@ -15,6 +16,7 @@ export default function Index() {
       <HeroSection onGetCard={() => setModalOpen(true)} />
       <PartnersSection />
       <FeaturesSection />
+      <PricingSection onGetCard={() => setModalOpen(true)} />
       <footer className="py-8 text-center text-sm text-gray-400">
         От оформления до первой покупки за рубежом —{" "}
         <span className="font-medium text-white">всё быстро и без лишних сложностей.</span>

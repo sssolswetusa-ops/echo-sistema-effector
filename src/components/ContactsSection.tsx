@@ -58,7 +58,7 @@ export function ContactsSection() {
           </a>
 
           <a
-            href="https://t.me/ustinov_zagran_karty"
+            href="https://t.me/zagran_karty"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center gap-3 rounded-2xl border border-orange-100 bg-white p-6 hover:border-[#229ED9] hover:bg-blue-50 transition-all group shadow-sm"
@@ -68,7 +68,7 @@ export function ContactsSection() {
             </div>
             <div className="text-center">
               <p className="text-xs text-gray-400 mb-1">Telegram</p>
-              <p className="text-gray-900 font-medium">@ustinov_zagran_karty</p>
+              <p className="text-gray-900 font-medium">@zagran_karty</p>
             </div>
           </a>
 

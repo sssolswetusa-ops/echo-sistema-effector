@@ -78,7 +78,7 @@ export function LeadModal({ open, onClose }: LeadModalProps) {
           <div className="rounded-xl bg-orange-50 border border-orange-200 p-3 flex items-center gap-3">
             <Icon name="MessageCircle" className="h-5 w-5 text-[#229ED9] shrink-0" />
             <p className="text-xs text-gray-500">
-              После отправки вы перейдёте в наш Telegram-канал <span className="text-gray-900 font-medium">@ustinov_zagran_karty</span> — там менеджер ответит в течение нескольких минут
+              После отправки вы перейдёте в наш Telegram-канал <span className="text-gray-900 font-medium">@zagran_karty</span> — там менеджер ответит в течение нескольких минут
             </p>
           </div>
 

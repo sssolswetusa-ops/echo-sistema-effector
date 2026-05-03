@@ -28,7 +28,7 @@ export default function Index() {
       <LeadModal open={modalOpen} onClose={() => setModalOpen(false)} />
 
       <a
-        href="https://t.me/ustinov_zagran_karty"
+        href="https://t.me/zagran_karty"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-[#229ED9] px-4 py-3 text-sm font-medium text-white shadow-lg hover:bg-[#1a8bbf] transition-all hover:scale-105 active:scale-95"

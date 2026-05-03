@@ -13,7 +13,7 @@ export default function Index() {
   const [modalOpen, setModalOpen] = useState(false)
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
+    <main className="min-h-screen bg-white">
       <Header onGetCard={() => setModalOpen(true)} />
       <HeroSection onGetCard={() => setModalOpen(true)} />
       <PartnersSection />
@@ -21,9 +21,9 @@ export default function Index() {
       <HowItWorksSection onGetCard={() => setModalOpen(true)} />
       <PricingSection onGetCard={() => setModalOpen(true)} />
       <ContactsSection />
-      <footer className="py-8 text-center text-sm text-gray-400">
+      <footer className="py-8 text-center text-sm text-gray-400 border-t border-orange-100">
         От оформления до первой покупки за рубежом —{" "}
-        <span className="font-medium text-white">всё быстро и без лишних сложностей.</span>
+        <span className="font-medium text-gray-900">всё быстро и без лишних сложностей.</span>
       </footer>
       <LeadModal open={modalOpen} onClose={() => setModalOpen(false)} />
 

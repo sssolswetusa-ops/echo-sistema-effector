@@ -77,11 +77,11 @@ export function HowItWorksSection({ onGetCard }: { onGetCard?: () => void }) {
 
         {/* Hero-блок */}
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Откройте карту иностранного банка,<br />
-            <span className="text-violet-400">не покидая Россию!</span>
+            <span className="text-orange-500">не покидая Россию!</span>
           </h2>
-          <p className="text-gray-400 text-lg leading-relaxed">
+          <p className="text-gray-500 text-lg leading-relaxed">
             Получите лёгкий и удобный доступ к международным платежам и финансовым сервисам с нашей помощью.
             Мы предлагаем гражданам РФ возможность открывать счета в дружественных юрисдикциях, обеспечивая
             надёжность и законность всех процессов. Всё оформление происходит дистанционно.
@@ -90,15 +90,15 @@ export function HowItWorksSection({ onGetCard }: { onGetCard?: () => void }) {
 
         {/* Преимущества карт */}
         <div>
-          <h3 className="text-2xl font-semibold text-white mb-8 text-center">Преимущества наших карт</h3>
+          <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">Преимущества наших карт</h3>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {advantages.map((item) => (
-              <div key={item.title} className="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-500/20">
-                  <Icon name={item.icon as "Plane"} size={20} className="text-violet-400" />
+              <div key={item.title} className="rounded-2xl border border-orange-100 bg-white p-6 flex flex-col gap-3 shadow-sm">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-orange-50">
+                  <Icon name={item.icon as "Plane"} size={20} className="text-orange-500" />
                 </div>
-                <p className="text-white font-semibold text-sm">{item.title}</p>
-                <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-gray-900 font-semibold text-sm">{item.title}</p>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -106,15 +106,15 @@ export function HowItWorksSection({ onGetCard }: { onGetCard?: () => void }) {
 
         {/* Почему выбирают нас */}
         <div>
-          <h3 className="text-2xl font-semibold text-white mb-8 text-center">Почему выбирают нас</h3>
+          <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">Почему выбирают нас</h3>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {whyUs.map((item) => (
-              <div key={item.title} className="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#229ED9]/20">
-                  <Icon name={item.icon as "Laptop"} size={20} className="text-[#229ED9]" />
+              <div key={item.title} className="rounded-2xl border border-orange-100 bg-white p-6 flex flex-col gap-3 shadow-sm">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-orange-50">
+                  <Icon name={item.icon as "Laptop"} size={20} className="text-orange-500" />
                 </div>
-                <p className="text-white font-semibold text-sm">{item.title}</p>
-                <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-gray-900 font-semibold text-sm">{item.title}</p>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -122,29 +122,29 @@ export function HowItWorksSection({ onGetCard }: { onGetCard?: () => void }) {
 
         {/* Как мы работаем */}
         <div>
-          <h3 className="text-2xl font-semibold text-white mb-8 text-center">Как мы работаем</h3>
+          <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">Как мы работаем</h3>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step) => (
-              <div key={step.num} className="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col gap-3">
-                <span className="text-3xl font-bold text-violet-500/40">{step.num}</span>
-                <p className="text-white font-semibold text-sm">{step.title}</p>
-                <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+              <div key={step.num} className="rounded-2xl border border-orange-100 bg-white p-6 flex flex-col gap-3 shadow-sm">
+                <span className="text-3xl font-bold text-orange-300">{step.num}</span>
+                <p className="text-gray-900 font-semibold text-sm">{step.title}</p>
+                <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Стоимость */}
-        <div className="rounded-2xl border border-violet-500/30 bg-violet-500/10 p-8 text-center">
-          <Icon name="Tag" size={32} className="text-violet-400 mx-auto mb-4" />
-          <h3 className="text-2xl font-semibold text-white mb-3">Стоимость услуг</h3>
-          <p className="text-gray-400 max-w-xl mx-auto mb-6">
+        <div className="rounded-2xl border border-orange-200 bg-orange-50 p-8 text-center">
+          <Icon name="Tag" size={32} className="text-orange-500 mx-auto mb-4" />
+          <h3 className="text-2xl font-semibold text-gray-900 mb-3">Стоимость услуг</h3>
+          <p className="text-gray-500 max-w-xl mx-auto mb-6">
             Стоимость открытия счёта зависит от выбранной юрисдикции и тарифов банка. Свяжитесь с нами,
             чтобы получить персонализированное предложение!
           </p>
           <Button
             onClick={onGetCard}
-            className="rounded-full bg-violet-600 hover:bg-violet-700 text-white font-medium px-8 py-5"
+            className="rounded-full bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-5"
           >
             <Icon name="MessageCircle" size={16} className="mr-2" />
             Получить предложение

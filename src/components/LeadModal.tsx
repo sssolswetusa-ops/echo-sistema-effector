@@ -37,56 +37,56 @@ export function LeadModal({ open, onClose }: LeadModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="bg-[#141414] border border-[#262626] text-white max-w-md">
+      <DialogContent className="bg-white border border-orange-100 text-gray-900 max-w-md">
         <DialogHeader>
           <div className="flex items-center gap-3 mb-1">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500/20 border border-violet-500/30">
-              <Icon name="CreditCard" className="h-5 w-5 text-violet-400" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-100 border border-orange-200">
+              <Icon name="CreditCard" className="h-5 w-5 text-orange-500" />
             </div>
-            <DialogTitle className="text-white text-xl">Получить заграничную карту</DialogTitle>
+            <DialogTitle className="text-gray-900 text-xl">Получить заграничную карту</DialogTitle>
           </div>
-          <p className="text-sm text-gray-400 pt-1">
+          <p className="text-sm text-gray-500 pt-1">
             Заполните форму — и мы свяжемся с вами в Telegram для оформления карты
           </p>
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-4 mt-2">
           <div className="space-y-1.5">
-            <Label htmlFor="name" className="text-gray-300 text-sm">Ваше имя</Label>
+            <Label htmlFor="name" className="text-gray-600 text-sm">Ваше имя</Label>
             <Input
               id="name"
               placeholder="Иван Иванов"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              className="bg-[#0f0f0f] border-[#262626] text-white placeholder-gray-600 focus:border-violet-500 focus-visible:ring-0"
+              className="bg-white border-orange-200 text-gray-900 placeholder-gray-300 focus:border-orange-400 focus-visible:ring-0"
             />
           </div>
 
           <div className="space-y-1.5">
-            <Label htmlFor="country" className="text-gray-300 text-sm">Нужная страна</Label>
+            <Label htmlFor="country" className="text-gray-600 text-sm">Нужная страна</Label>
             <Input
               id="country"
               placeholder="Например: Турция, ОАЭ, Таиланд..."
               value={country}
               onChange={(e) => setCountry(e.target.value)}
               required
-              className="bg-[#0f0f0f] border-[#262626] text-white placeholder-gray-600 focus:border-violet-500 focus-visible:ring-0"
+              className="bg-white border-orange-200 text-gray-900 placeholder-gray-300 focus:border-orange-400 focus-visible:ring-0"
             />
           </div>
 
-          <div className="rounded-xl bg-[#1a1a1a] border border-[#262626] p-3 flex items-center gap-3">
-            <Icon name="MessageCircle" className="h-5 w-5 text-blue-400 shrink-0" />
-            <p className="text-xs text-gray-400">
-              После отправки вы перейдёте в наш Telegram-канал <span className="text-white font-medium">@ustinov_zagran_karty</span> — там менеджер ответит в течение нескольких минут
+          <div className="rounded-xl bg-orange-50 border border-orange-200 p-3 flex items-center gap-3">
+            <Icon name="MessageCircle" className="h-5 w-5 text-[#229ED9] shrink-0" />
+            <p className="text-xs text-gray-500">
+              После отправки вы перейдёте в наш Telegram-канал <span className="text-gray-900 font-medium">@ustinov_zagran_karty</span> — там менеджер ответит в течение нескольких минут
             </p>
           </div>
 
-          {error && <p className="text-red-400 text-sm text-center">{error}</p>}
+          {error && <p className="text-red-500 text-sm text-center">{error}</p>}
           <Button
             type="submit"
             disabled={loading}
-            className="w-full rounded-full bg-violet-600 hover:bg-violet-700 text-white font-medium py-5 disabled:opacity-60"
+            className="w-full rounded-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-5 disabled:opacity-60"
           >
             <Icon name={loading ? "Loader" : "Send"} className={`mr-2 h-4 w-4 ${loading ? "animate-spin" : ""}`} />
             {loading ? "Отправляем..." : "Перейти в Telegram"}

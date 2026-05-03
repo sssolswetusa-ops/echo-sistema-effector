@@ -64,23 +64,23 @@ export function PricingSection({ onGetCard }: PricingSectionProps) {
     <section className="px-4 md:px-8 py-16">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">Тарифы</h2>
-          <p className="text-gray-400 max-w-md mx-auto">Выберите подходящий план — оформление займёт не больше дня</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Тарифы</h2>
+          <p className="text-gray-500 max-w-md mx-auto">Выберите подходящий план — оформление займёт не больше дня</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative rounded-2xl border p-6 flex flex-col ${
+              className={`relative rounded-2xl border p-6 flex flex-col shadow-sm ${
                 plan.highlighted
-                  ? "bg-violet-600/10 border-violet-500"
-                  : "bg-[#141414] border-[#262626]"
+                  ? "bg-orange-50 border-orange-400"
+                  : "bg-white border-orange-100"
               }`}
             >
               {plan.highlighted && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="rounded-full bg-violet-600 px-3 py-1 text-xs font-medium text-white">
+                  <span className="rounded-full bg-orange-500 px-3 py-1 text-xs font-medium text-white">
                     Популярный
                   </span>
                 </div>
@@ -90,19 +90,19 @@ export function PricingSection({ onGetCard }: PricingSectionProps) {
                 <span className="text-3xl">{plan.emoji}</span>
               </div>
 
-              <h3 className="text-lg font-semibold text-white mb-1">{plan.name}</h3>
-              <p className="text-sm text-gray-400 mb-5">{plan.description}</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">{plan.name}</h3>
+              <p className="text-sm text-gray-500 mb-5">{plan.description}</p>
 
               <div className="mb-1">
-                <span className="text-3xl font-bold text-white">{plan.price}</span>
-                <span className="text-gray-500 text-sm ml-1">/ {plan.period}</span>
+                <span className="text-3xl font-bold text-gray-900">{plan.price}</span>
+                <span className="text-gray-400 text-sm ml-1">/ {plan.period}</span>
               </div>
-              <p className="text-xs text-gray-500 mb-6">Обслуживание: {plan.maintenance}</p>
+              <p className="text-xs text-gray-400 mb-6">Обслуживание: {plan.maintenance}</p>
 
               <ul className="space-y-2.5 mb-8 flex-1">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2 text-sm text-gray-300">
-                    <Icon name="Check" size={15} className="text-violet-400 shrink-0" />
+                  <li key={feature} className="flex items-center gap-2 text-sm text-gray-700">
+                    <Icon name="Check" size={15} className="text-orange-500 shrink-0" />
                     {feature}
                   </li>
                 ))}
@@ -112,8 +112,8 @@ export function PricingSection({ onGetCard }: PricingSectionProps) {
                 onClick={onGetCard}
                 className={`w-full rounded-full font-medium ${
                   plan.highlighted
-                    ? "bg-violet-600 hover:bg-violet-700 text-white"
-                    : "bg-[#252525] text-gray-300 hover:bg-[#2e2e2e] hover:text-white"
+                    ? "bg-orange-500 hover:bg-orange-600 text-white"
+                    : "bg-orange-100 text-orange-700 hover:bg-orange-200"
                 }`}
               >
                 {plan.cta}
@@ -128,7 +128,7 @@ export function PricingSection({ onGetCard }: PricingSectionProps) {
 
         {/* Bank cards gallery */}
         <div className="mt-16">
-          <h3 className="text-xl md:text-2xl font-semibold text-white text-center mb-2">Банки-партнёры</h3>
+          <h3 className="text-xl md:text-2xl font-semibold text-gray-900 text-center mb-2">Банки-партнёры</h3>
           <p className="text-gray-400 text-sm text-center mb-8">Карты ведущих банков СНГ с доставкой в Россию</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
@@ -159,7 +159,7 @@ export function PricingSection({ onGetCard }: PricingSectionProps) {
             ].map((img) => (
               <div
                 key={img.src}
-                className="rounded-2xl overflow-hidden border border-[#262626] hover:border-violet-500/50 transition-colors"
+                className="rounded-2xl overflow-hidden border border-orange-100 hover:border-orange-400 transition-colors shadow-sm"
               >
                 <img
                   src={img.src}

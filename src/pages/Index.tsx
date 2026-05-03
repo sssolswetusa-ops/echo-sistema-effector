@@ -3,6 +3,7 @@ import { Header } from "@/components/Header"
 import { HeroSection } from "@/components/HeroSection"
 import { PartnersSection } from "@/components/PartnersSection"
 import { FeaturesSection } from "@/components/FeaturesSection"
+import { HowItWorksSection } from "@/components/HowItWorksSection"
 import { PricingSection } from "@/components/PricingSection"
 import { LeadModal } from "@/components/LeadModal"
 import { ContactsSection } from "@/components/ContactsSection"
@@ -17,6 +18,7 @@ export default function Index() {
       <HeroSection onGetCard={() => setModalOpen(true)} />
       <PartnersSection />
       <FeaturesSection />
+      <HowItWorksSection onGetCard={() => setModalOpen(true)} />
       <PricingSection onGetCard={() => setModalOpen(true)} />
       <ContactsSection />
       <footer className="py-8 text-center text-sm text-gray-400">

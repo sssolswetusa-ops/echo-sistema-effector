@@ -18,7 +18,7 @@ export function Header({ onGetCard }: { onGetCard?: () => void }) {
         <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors flex items-center gap-1">
           Страны <ChevronDown className="h-4 w-4" />
         </a>
-        <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
+        <a href="#how-it-works" className="text-sm text-gray-300 hover:text-white transition-colors">
           Как это работает
         </a>
         <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">

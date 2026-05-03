@@ -20,7 +20,13 @@ export function HeroSection({ onGetCard }: { onGetCard?: () => void }) {
         <Button onClick={onGetCard} className="rounded-full bg-orange-500 px-6 hover:bg-orange-600 text-white">
           Получить карту <ArrowUpRight className="ml-2 h-4 w-4" />
         </Button>
-        <Button variant="outline" className="rounded-full border-gray-300 bg-white text-gray-700 hover:bg-gray-100">
+        <Button
+          variant="outline"
+          className="rounded-full border-gray-300 bg-white text-gray-700 hover:bg-gray-100"
+          onClick={() => {
+            document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })
+          }}
+        >
           <Play className="mr-2 h-4 w-4 fill-orange-500 text-orange-500" /> Как это работает
         </Button>
       </div>

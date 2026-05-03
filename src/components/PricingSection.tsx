@@ -152,6 +152,10 @@ export function PricingSection({ onGetCard }: PricingSectionProps) {
                 src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/eaecec9c-8494-4487-92c9-a485ba7a9e18.jpg",
                 alt: "МБанк — Visa Gold/Platinum/Infinite",
               },
+              {
+                src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/d7e25fb9-0224-467d-bdc8-c55078db9798.jpg",
+                alt: "Фридом Финанс Казахстан — мультивалютная Mastercard",
+              },
             ].map((img) => (
               <div
                 key={img.src}

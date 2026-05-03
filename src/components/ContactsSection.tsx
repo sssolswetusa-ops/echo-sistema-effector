@@ -9,14 +9,30 @@ export function ContactsSection() {
   const [phone, setPhone] = useState("")
   const [question, setQuestion] = useState("")
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSent(true)
-    setTimeout(() => setSent(false), 4000)
-    setName("")
-    setPhone("")
-    setQuestion("")
+    setLoading(true)
+    setError("")
+    try {
+      const res = await fetch("https://functions.poehali.dev/cad40df1-f4e0-4ac1-a222-dc99fc3e001b", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, question, source: "Форма контактов" }),
+      })
+      if (!res.ok) throw new Error()
+      setSent(true)
+      setName("")
+      setPhone("")
+      setQuestion("")
+      setTimeout(() => setSent(false), 5000)
+    } catch {
+      setError("Ошибка отправки. Попробуйте позже или напишите напрямую в Telegram.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -122,12 +138,16 @@ export function ContactsSection() {
                   className="bg-[#0f0f0f] border-[#262626] text-white placeholder-gray-600 focus:border-violet-500 focus-visible:ring-0"
                 />
               </div>
+              {error && (
+                <p className="text-red-400 text-sm text-center">{error}</p>
+              )}
               <Button
                 type="submit"
-                className="w-full rounded-full bg-violet-600 hover:bg-violet-700 text-white font-medium py-5"
+                disabled={loading}
+                className="w-full rounded-full bg-violet-600 hover:bg-violet-700 text-white font-medium py-5 disabled:opacity-60"
               >
-                <Icon name="Send" size={16} className="mr-2" />
-                Отправить заявку
+                <Icon name={loading ? "Loader" : "Send"} size={16} className={`mr-2 ${loading ? "animate-spin" : ""}`} />
+                {loading ? "Отправляем..." : "Отправить заявку"}
               </Button>
             </form>
           )}

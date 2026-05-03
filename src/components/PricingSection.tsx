@@ -125,6 +125,48 @@ export function PricingSection({ onGetCard }: PricingSectionProps) {
         <p className="text-center text-xs text-gray-600 mt-6">
           Все тарифы включают защиту 3D Secure · Стоимость указана ориентировочно, уточняйте у менеджера
         </p>
+
+        {/* Bank cards gallery */}
+        <div className="mt-16">
+          <h3 className="text-xl md:text-2xl font-semibold text-white text-center mb-2">Банки-партнёры</h3>
+          <p className="text-gray-400 text-sm text-center mb-8">Карты ведущих банков СНГ с доставкой в Россию</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              {
+                src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/9cb44fbc-813d-43c3-8e46-7639029f6576.jpg",
+                alt: "Банк Армении — карта MasterCard",
+              },
+              {
+                src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/4a9e3e9b-ab59-4482-a842-ad2ef18fbb66.jpg",
+                alt: "Айыл Банк — именная карта Visa",
+              },
+              {
+                src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/1715a717-a536-40e1-896e-c1837b83a3c7.jpg",
+                alt: "Банк Бакай — карта Visa",
+              },
+              {
+                src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/454cf49b-3664-4738-873a-a5e5a1b5d7b0.jpg",
+                alt: "Киргизко Швейцарский Банк KSB — Visa Platinum / Signature",
+              },
+              {
+                src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/eaecec9c-8494-4487-92c9-a485ba7a9e18.jpg",
+                alt: "МБанк — Visa Gold/Platinum/Infinite",
+              },
+            ].map((img) => (
+              <div
+                key={img.src}
+                className="rounded-2xl overflow-hidden border border-[#262626] hover:border-violet-500/50 transition-colors"
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )

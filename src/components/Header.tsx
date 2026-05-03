@@ -24,7 +24,7 @@ export function Header({ onGetCard }: { onGetCard?: () => void }) {
         <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
           Тарифы
         </a>
-        <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
+        <a href="#contacts" className="text-sm text-gray-300 hover:text-white transition-colors">
           Контакты
         </a>
       </nav>

@@ -13,11 +13,26 @@ interface LeadModalProps {
 export function LeadModal({ open, onClose }: LeadModalProps) {
   const [name, setName] = useState("")
   const [country, setCountry] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    window.open("https://t.me/ustinov_zagran_karty", "_blank")
-    onClose()
+    setLoading(true)
+    setError("")
+    try {
+      await fetch("https://functions.poehali.dev/cad40df1-f4e0-4ac1-a222-dc99fc3e001b", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone: "—", question: `Страна: ${country}`, source: "Кнопка «Получить карту»" }),
+      })
+    } catch {
+      setError("Ошибка отправки, но вы всё равно можете написать нам напрямую.")
+    } finally {
+      setLoading(false)
+      window.open("https://t.me/ustinov_zagran_karty", "_blank")
+      onClose()
+    }
   }
 
   return (
@@ -67,12 +82,14 @@ export function LeadModal({ open, onClose }: LeadModalProps) {
             </p>
           </div>
 
+          {error && <p className="text-red-400 text-sm text-center">{error}</p>}
           <Button
             type="submit"
-            className="w-full rounded-full bg-violet-600 hover:bg-violet-700 text-white font-medium py-5"
+            disabled={loading}
+            className="w-full rounded-full bg-violet-600 hover:bg-violet-700 text-white font-medium py-5 disabled:opacity-60"
           >
-            <Icon name="Send" className="mr-2 h-4 w-4" />
-            Перейти в Telegram
+            <Icon name={loading ? "Loader" : "Send"} className={`mr-2 h-4 w-4 ${loading ? "animate-spin" : ""}`} />
+            {loading ? "Отправляем..." : "Перейти в Telegram"}
           </Button>
         </form>
       </DialogContent>

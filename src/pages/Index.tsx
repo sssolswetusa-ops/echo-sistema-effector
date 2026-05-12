@@ -4,7 +4,10 @@ import { HeroSection } from "@/components/HeroSection"
 import { PartnersSection } from "@/components/PartnersSection"
 import { FeaturesSection } from "@/components/FeaturesSection"
 import { HowItWorksSection } from "@/components/HowItWorksSection"
+import { CountriesSection } from "@/components/CountriesSection"
 import { PricingSection } from "@/components/PricingSection"
+import { ReviewsSection } from "@/components/ReviewsSection"
+import { FAQSection } from "@/components/FAQSection"
 import { LeadModal } from "@/components/LeadModal"
 import { ContactsSection } from "@/components/ContactsSection"
 import Icon from "@/components/ui/icon"
@@ -19,7 +22,10 @@ export default function Index() {
       <PartnersSection />
       <FeaturesSection />
       <HowItWorksSection onGetCard={() => setModalOpen(true)} />
+      <CountriesSection onGetCard={() => setModalOpen(true)} />
       <PricingSection onGetCard={() => setModalOpen(true)} />
+      <ReviewsSection />
+      <FAQSection />
       <ContactsSection />
       <footer className="py-8 text-center text-sm text-gray-400 border-t border-orange-100">
         От оформления до первой покупки за рубежом —{" "}

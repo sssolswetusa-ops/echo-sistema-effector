@@ -12,17 +12,17 @@ export function Header({ onGetCard }: { onGetCard?: () => void }) {
       </div>
 
       <nav className="hidden md:flex items-center gap-8">
-        <a href="#" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
-          Карты
-        </a>
-        <a href="#" className="text-sm text-gray-500 hover:text-gray-900 transition-colors flex items-center gap-1">
+        <a href="#countries" className="text-sm text-gray-500 hover:text-gray-900 transition-colors flex items-center gap-1">
           Страны <ChevronDown className="h-4 w-4" />
         </a>
         <a href="#how-it-works" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
           Как это работает
         </a>
-        <a href="#" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
-          Тарифы
+        <a href="#reviews" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
+          Отзывы
+        </a>
+        <a href="#faq" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
+          FAQ
         </a>
         <a href="#contacts" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
           Контакты

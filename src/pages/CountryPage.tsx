@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import { getCountryBySlug } from "@/data/countries"
 import { LeadModal } from "@/components/LeadModal"
@@ -9,6 +9,48 @@ export default function CountryPage() {
   const { slug } = useParams<{ slug: string }>()
   const [modalOpen, setModalOpen] = useState(false)
   const country = getCountryBySlug(slug ?? "")
+
+  useEffect(() => {
+    if (!country) return
+    const prevTitle = document.title
+    const prevDesc = document.querySelector('meta[name="description"]')?.getAttribute("content") ?? ""
+
+    document.title = `${country.title} | GlobalCard`
+
+    let metaDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]')
+    if (!metaDesc) {
+      metaDesc = document.createElement("meta")
+      metaDesc.name = "description"
+      document.head.appendChild(metaDesc)
+    }
+    metaDesc.content = country.metaDescription
+
+    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]')
+    if (!canonical) {
+      canonical = document.createElement("link")
+      canonical.rel = "canonical"
+      document.head.appendChild(canonical)
+    }
+    const prevCanonical = canonical.href
+    canonical.href = `https://all-pay-card.ru/countries/${country.slug}`
+
+    const ogTitle = document.querySelector<HTMLMetaElement>('meta[property="og:title"]')
+    if (ogTitle) ogTitle.content = `${country.title} | GlobalCard`
+
+    const ogDesc = document.querySelector<HTMLMetaElement>('meta[property="og:description"]')
+    if (ogDesc) ogDesc.content = country.metaDescription
+
+    const ogUrl = document.querySelector<HTMLMetaElement>('meta[property="og:url"]')
+    if (ogUrl) ogUrl.content = `https://all-pay-card.ru/countries/${country.slug}`
+
+    return () => {
+      document.title = prevTitle
+      if (metaDesc) metaDesc.content = prevDesc
+      if (canonical) canonical.href = prevCanonical
+      if (ogTitle) ogTitle.content = prevTitle
+      if (ogDesc) ogDesc.content = prevDesc
+    }
+  }, [country])
 
   if (!country) {
     return (

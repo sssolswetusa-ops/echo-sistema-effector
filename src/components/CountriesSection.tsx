@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom"
 import Icon from "@/components/ui/icon"
 
 const countries = [
   {
+    slug: "kazakhstan",
     flag: "🇰🇿",
     name: "Казахстан",
     description: "Карты банков Казахстана — самый популярный выбор. Принимаются по всему миру, быстрое оформление за 3–5 дней.",
@@ -10,6 +12,7 @@ const countries = [
     popular: true
   },
   {
+    slug: "uae",
     flag: "🇦🇪",
     name: "ОАЭ",
     description: "Премиальные карты ОАЭ для крупных транзакций и международного бизнеса. Без ограничений по операциям.",
@@ -18,6 +21,7 @@ const countries = [
     popular: false
   },
   {
+    slug: "turkey",
     flag: "🇹🇷",
     name: "Турция",
     description: "Карты турецких банков для оплаты в Европе и США. Удобны для путешественников и онлайн-шопинга.",
@@ -26,6 +30,7 @@ const countries = [
     popular: false
   },
   {
+    slug: "georgia",
     flag: "🇬🇪",
     name: "Грузия",
     description: "Грузинские карты — простое оформление, лояльные условия. Идеально для малого бизнеса и фрилансеров.",
@@ -34,6 +39,7 @@ const countries = [
     popular: false
   },
   {
+    slug: "armenia",
     flag: "🇦🇲",
     name: "Армения",
     description: "Армянские карты принимаются в большинстве стран мира. Минимум документов, быстрое открытие счёта.",
@@ -42,6 +48,7 @@ const countries = [
     popular: true
   },
   {
+    slug: "thailand",
     flag: "🇹🇭",
     name: "Таиланд",
     description: "Карты тайских банков для тех, кто часто бывает в Азии. Удобны для цифровых кочевников.",
@@ -50,6 +57,7 @@ const countries = [
     popular: false
   },
   {
+    slug: "serbia",
     flag: "🇷🇸",
     name: "Сербия",
     description: "Сербские карты открывают доступ к европейским платёжным системам. Популярны среди IT-специалистов.",
@@ -58,6 +66,7 @@ const countries = [
     popular: false
   },
   {
+    slug: "uzbekistan",
     flag: "🇺🇿",
     name: "Узбекистан",
     description: "Карты Узбекистана для работы с СНГ и международными партнёрами. Лояльные условия открытия.",
@@ -85,10 +94,10 @@ export function CountriesSection({ onGetCard }: { onGetCard?: () => void }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {countries.map((country) => (
-            <div
-              key={country.name}
-              className="relative rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:border-orange-200 transition-all cursor-pointer bg-white"
-              onClick={onGetCard}
+            <Link
+              key={country.slug}
+              to={`/countries/${country.slug}`}
+              className="relative rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:border-orange-200 transition-all bg-white block"
             >
               {country.popular && (
                 <span className="absolute top-3 right-3 text-xs font-semibold bg-orange-100 text-orange-600 px-2 py-0.5 rounded-full">
@@ -108,7 +117,10 @@ export function CountriesSection({ onGetCard }: { onGetCard?: () => void }) {
                   {country.banks.join(", ")}
                 </div>
               </div>
-            </div>
+              <div className="mt-4 flex items-center gap-1 text-xs text-orange-500 font-medium">
+                Подробнее <Icon name="ArrowRight" size={12} />
+              </div>
+            </Link>
           ))}
         </div>
 

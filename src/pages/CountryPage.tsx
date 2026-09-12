@@ -32,7 +32,7 @@ export default function CountryPage() {
       document.head.appendChild(canonical)
     }
     const prevCanonical = canonical.href
-    canonical.href = `https://all-pay-card.ru/countries/${country.slug}`
+    canonical.href = `https://загранкарты.online/countries/${country.slug}`
 
     const ogTitle = document.querySelector<HTMLMetaElement>('meta[property="og:title"]')
     if (ogTitle) ogTitle.content = `${country.title} | GlobalCard`
@@ -41,7 +41,7 @@ export default function CountryPage() {
     if (ogDesc) ogDesc.content = country.metaDescription
 
     const ogUrl = document.querySelector<HTMLMetaElement>('meta[property="og:url"]')
-    if (ogUrl) ogUrl.content = `https://all-pay-card.ru/countries/${country.slug}`
+    if (ogUrl) ogUrl.content = `https://загранкарты.online/countries/${country.slug}`
 
     return () => {
       document.title = prevTitle

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Icon from "@/components/ui/icon"
+import { JsonLd } from "@/components/JsonLd"
 
 const faqs = [
   {
@@ -49,6 +50,20 @@ export function FAQSection() {
 
   return (
     <section id="faq" className="py-20 px-8 bg-gray-50">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        }}
+      />
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
           <span className="inline-block text-xs font-semibold uppercase tracking-widest text-orange-500 mb-3">

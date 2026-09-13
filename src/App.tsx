@@ -7,8 +7,21 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import CountryPage from "./pages/CountryPage";
 import NotFound from "./pages/NotFound";
+import { useTrackVisit } from "./hooks/useTrackVisit";
 
 const queryClient = new QueryClient();
+
+function TrackedRoutes() {
+  useTrackVisit();
+  return (
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/countries/:slug" element={<CountryPage />} />
+      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+}
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -16,12 +29,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/countries/:slug" element={<CountryPage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <TrackedRoutes />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

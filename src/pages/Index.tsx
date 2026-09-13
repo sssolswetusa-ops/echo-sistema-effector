@@ -5,7 +5,7 @@ import { PartnersSection } from "@/components/PartnersSection"
 import { FeaturesSection } from "@/components/FeaturesSection"
 import { HowItWorksSection } from "@/components/HowItWorksSection"
 import { CountriesSection } from "@/components/CountriesSection"
-import { PricingSection } from "@/components/PricingSection"
+import { PartnerBanksSection } from "@/components/PartnerBanksSection"
 import { ReviewsSection } from "@/components/ReviewsSection"
 import { FAQSection } from "@/components/FAQSection"
 import { LeadModal } from "@/components/LeadModal"
@@ -23,7 +23,7 @@ export default function Index() {
       <FeaturesSection />
       <HowItWorksSection onGetCard={() => setModalOpen(true)} />
       <CountriesSection onGetCard={() => setModalOpen(true)} />
-      <PricingSection onGetCard={() => setModalOpen(true)} />
+      <PartnerBanksSection />
       <ReviewsSection />
       <FAQSection />
       <ContactsSection />

@@ -3,6 +3,8 @@ import os
 import urllib.request
 import urllib.parse
 
+import psycopg2
+
 def handler(event: dict, context) -> dict:
     """Отправляет заявку с сайта в Telegram"""
 
@@ -57,8 +59,25 @@ def handler(event: dict, context) -> dict:
         data=data,
         method='POST'
     )
-    with urllib.request.urlopen(req) as resp:
-        result = json.loads(resp.read())
+    try:
+        with urllib.request.urlopen(req, timeout=3) as resp:
+            result = json.loads(resp.read())
+    except Exception:
+        pass
+
+    try:
+        conn = psycopg2.connect(os.environ['DATABASE_URL'])
+        conn.autocommit = True
+        cur = conn.cursor()
+        schema = os.environ.get('MAIN_DB_SCHEMA', 'public')
+        cur.execute(
+            f"INSERT INTO {schema}.leads (name, phone, source) VALUES (%s, %s, %s)",
+            (name, phone, source)
+        )
+        cur.close()
+        conn.close()
+    except Exception:
+        pass
 
     return {
         'statusCode': 200,

@@ -20,10 +20,10 @@ export default function Index() {
       <Header onGetCard={() => setModalOpen(true)} />
       <HeroSection onGetCard={() => setModalOpen(true)} />
       <PartnersSection />
+      <PartnerBanksSection onGetCard={() => setModalOpen(true)} />
       <FeaturesSection />
       <HowItWorksSection onGetCard={() => setModalOpen(true)} />
       <CountriesSection onGetCard={() => setModalOpen(true)} />
-      <PartnerBanksSection onGetCard={() => setModalOpen(true)} />
       <ReviewsSection />
       <FAQSection />
       <ContactsSection />

@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom"
 import { getCountryBySlug } from "@/data/countries"
 import { LeadModal } from "@/components/LeadModal"
 import { Header } from "@/components/Header"
+import { Breadcrumbs } from "@/components/Breadcrumbs"
 import Icon from "@/components/ui/icon"
 
 export default function CountryPage() {
@@ -68,10 +69,13 @@ export default function CountryPage() {
       {/* Hero */}
       <section className="py-16 px-8 bg-gradient-to-br from-orange-50 to-white">
         <div className="max-w-4xl mx-auto">
-          <Link to="/#countries" className="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-6 transition-colors">
-            <Icon name="ArrowLeft" size={14} />
-            Все страны
-          </Link>
+          <Breadcrumbs
+            items={[
+              { name: "Главная", path: "/" },
+              { name: "Страны", path: "/#countries" },
+              { name: country.title },
+            ]}
+          />
           <div className="flex items-center gap-4 mb-6">
             <span className="text-6xl">{country.flag}</span>
             <div>

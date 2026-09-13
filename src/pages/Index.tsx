@@ -23,7 +23,7 @@ export default function Index() {
       <FeaturesSection />
       <HowItWorksSection onGetCard={() => setModalOpen(true)} />
       <CountriesSection onGetCard={() => setModalOpen(true)} />
-      <PartnerBanksSection />
+      <PartnerBanksSection onGetCard={() => setModalOpen(true)} />
       <ReviewsSection />
       <FAQSection />
       <ContactsSection />

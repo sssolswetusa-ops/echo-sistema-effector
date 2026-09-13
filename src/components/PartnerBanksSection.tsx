@@ -25,7 +25,11 @@ const banks = [
   },
 ]
 
-export function PartnerBanksSection() {
+interface PartnerBanksSectionProps {
+  onGetCard?: () => void
+}
+
+export function PartnerBanksSection({ onGetCard }: PartnerBanksSectionProps) {
   return (
     <section className="px-4 md:px-8 py-16">
       <div className="max-w-6xl mx-auto">
@@ -35,9 +39,11 @@ export function PartnerBanksSection() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {banks.map((img) => (
-            <div
+            <button
               key={img.src}
-              className="rounded-2xl overflow-hidden border border-orange-100 hover:border-orange-400 transition-colors shadow-sm"
+              type="button"
+              onClick={onGetCard}
+              className="rounded-2xl overflow-hidden border border-orange-100 hover:border-orange-400 transition-colors shadow-sm text-left cursor-pointer"
             >
               <img
                 src={img.src}
@@ -45,7 +51,7 @@ export function PartnerBanksSection() {
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />
-            </div>
+            </button>
           ))}
         </div>
       </div>

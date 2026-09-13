@@ -133,23 +133,23 @@ export function PricingSection({ onGetCard }: PricingSectionProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               {
-                src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/9cb44fbc-813d-43c3-8e46-7639029f6576.jpg",
+                src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/59c5cc1e-c6a6-47cc-84e9-c43038ff336e.jpg",
                 alt: "Банк Армении — карта MasterCard",
               },
               {
-                src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/4a9e3e9b-ab59-4482-a842-ad2ef18fbb66.jpg",
+                src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/65c8e255-fac3-44f9-a7f1-f06c33f1082c.jpg",
                 alt: "Айыл Банк — именная карта Visa",
               },
               {
-                src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/1715a717-a536-40e1-896e-c1837b83a3c7.jpg",
+                src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/6d22b68c-6444-4c67-b623-a718d8755d43.jpg",
                 alt: "Банк Бакай — карта Visa",
               },
               {
-                src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/454cf49b-3664-4738-873a-a5e5a1b5d7b0.jpg",
+                src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/f7afe65e-bc5b-4406-b15a-758c52d41ad4.jpg",
                 alt: "Киргизко Швейцарский Банк KSB — Visa Platinum / Signature",
               },
               {
-                src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/eaecec9c-8494-4487-92c9-a485ba7a9e18.jpg",
+                src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/388205ea-f109-475c-a409-7a34d2adc246.jpg",
                 alt: "МБанк — Visa Gold/Platinum/Infinite",
               },
               {

@@ -4,6 +4,7 @@ import { getCountryBySlug } from "@/data/countries"
 import { LeadModal } from "@/components/LeadModal"
 import { Header } from "@/components/Header"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
+import { JsonLd } from "@/components/JsonLd"
 import Icon from "@/components/ui/icon"
 
 export default function CountryPage() {
@@ -75,6 +76,20 @@ export default function CountryPage() {
               { name: "Страны", path: "/#countries" },
               { name: country.title },
             ]}
+          />
+          <JsonLd
+            data={{
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: country.faq.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: item.answer,
+                },
+              })),
+            }}
           />
           <div className="flex items-center gap-4 mb-6">
             <span className="text-6xl">{country.flag}</span>

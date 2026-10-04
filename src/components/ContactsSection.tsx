@@ -73,7 +73,7 @@ export function ContactsSection() {
           </a>
 
           <a
-            href="https://max.ru/+79610008801"
+            href="https://max.ru/u/f9LHodD0cOKJ7MnXpuO7b43hpwrzN92Fy3mppD9aL3VHb_s2ut2anat59SQ"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center gap-3 rounded-2xl border border-orange-100 bg-white p-6 hover:border-purple-400 hover:bg-purple-50 transition-all group shadow-sm"

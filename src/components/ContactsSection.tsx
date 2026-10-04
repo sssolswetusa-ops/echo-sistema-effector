@@ -43,7 +43,7 @@ export function ContactsSection() {
           <p className="text-gray-500">Свяжитесь с нами любым удобным способом</p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-3 mb-12">
+        <div className="grid gap-4 sm:grid-cols-2 mb-12">
           <a
             href="tel:+79036445752"
             className="flex flex-col items-center gap-3 rounded-2xl border border-orange-100 bg-white p-6 hover:border-orange-400 hover:bg-orange-50 transition-all group shadow-sm"
@@ -69,6 +69,21 @@ export function ContactsSection() {
             <div className="text-center">
               <p className="text-xs text-gray-400 mb-1">Telegram</p>
               <p className="text-gray-900 font-medium">@zagran_karty</p>
+            </div>
+          </a>
+
+          <a
+            href="https://max.ru/+79610008801"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-3 rounded-2xl border border-orange-100 bg-white p-6 hover:border-purple-400 hover:bg-purple-50 transition-all group shadow-sm"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 group-hover:bg-purple-200 transition-colors">
+              <Icon name="MessageCircle" size={22} className="text-purple-600" />
+            </div>
+            <div className="text-center">
+              <p className="text-xs text-gray-400 mb-1">MAX</p>
+              <p className="text-gray-900 font-medium">+7 961 000-88-01</p>
             </div>
           </a>
 

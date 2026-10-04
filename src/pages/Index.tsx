@@ -18,6 +18,7 @@ export default function Index() {
   return (
     <main className="min-h-screen bg-white">
       <Header onGetCard={() => setModalOpen(true)} />
+      <ContactsSection />
       <HeroSection onGetCard={() => setModalOpen(true)} />
       <PartnersSection />
       <PartnerBanksSection onGetCard={() => setModalOpen(true)} />
@@ -26,7 +27,6 @@ export default function Index() {
       <CountriesSection onGetCard={() => setModalOpen(true)} />
       <ReviewsSection />
       <FAQSection />
-      <ContactsSection />
       <footer className="py-8 text-center text-sm text-gray-400 border-t border-orange-100">
         От оформления до первой покупки за рубежом —{" "}
         <span className="font-medium text-gray-900">всё быстро и без лишних сложностей.</span>

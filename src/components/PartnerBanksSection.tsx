@@ -20,10 +20,6 @@ const banks = [
     alt: "МБанк — Visa Gold/Platinum/Infinite",
   },
   {
-    src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/d7e25fb9-0224-467d-bdc8-c55078db9798.jpg",
-    alt: "Фридом Финанс Казахстан — мультивалютная Mastercard",
-  },
-  {
     src: "https://cdn.poehali.dev/projects/b278b387-bd82-4b3f-8a8d-eddb151331e4/bucket/ac0f758c-14f0-4d8e-a27f-d9ead1cdc066.png",
     alt: "Фридом Финанс Казахстан — оформление через электронное резидентство",
   },

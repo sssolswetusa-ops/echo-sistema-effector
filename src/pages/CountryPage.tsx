@@ -17,7 +17,7 @@ export default function CountryPage() {
     const prevTitle = document.title
     const prevDesc = document.querySelector('meta[name="description"]')?.getAttribute("content") ?? ""
 
-    document.title = `${country.title} | GlobalCard`
+    document.title = `${country.seoTitle} | Загранкарты`
 
     let metaDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]')
     if (!metaDesc) {
@@ -37,7 +37,7 @@ export default function CountryPage() {
     canonical.href = `https://загранкарты.online/countries/${country.slug}`
 
     const ogTitle = document.querySelector<HTMLMetaElement>('meta[property="og:title"]')
-    if (ogTitle) ogTitle.content = `${country.title} | GlobalCard`
+    if (ogTitle) ogTitle.content = `${country.seoTitle} | Загранкарты`
 
     const ogDesc = document.querySelector<HTMLMetaElement>('meta[property="og:description"]')
     if (ogDesc) ogDesc.content = country.metaDescription
